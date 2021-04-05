@@ -54,7 +54,7 @@ namespace OpenLiveWriter.PostEditor
             _publishingContext = publishingContext;
             _publish = publish;
 
-            // look and feel (no form border and theme dervied background color)
+            // look and feel (no form border and theme derived background color)
             FormBorderStyle = FormBorderStyle.None;
             BackColor = ColorizedResources.Instance.FrameGradientLight;
 
@@ -274,7 +274,10 @@ namespace OpenLiveWriter.PostEditor
                     for (int i = 1; i <= 26; i++)
                     {
                         string resourceName = String.Format(CultureInfo.InvariantCulture, "Images.PublishAnimation.post{0:00}.png", i);
-                        list.Add(ResourceHelper.LoadAssemblyResourceBitmap(resourceName));
+                        // Add the scaled animation frame bitmap
+                        list.Add(
+                            DisplayHelper.ScaleBitmap(ResourceHelper.LoadAssemblyResourceBitmap(resourceName))
+                            );
                     }
                     _animationBitmaps = (Bitmap[])list.ToArray(typeof(Bitmap));
                 }

@@ -164,8 +164,8 @@ namespace OpenLiveWriter.HtmlEditor
         }
 
         public virtual string GetEditedHtmlFast()
-        {
-            return GetEditedHtml(false);
+        {            
+            return GetEditedHtml(true);
         }
 
         public string SelectedText
@@ -648,7 +648,7 @@ namespace OpenLiveWriter.HtmlEditor
         {
             get
             {
-                // not suppported
+                // not supported
                 return false;
             }
         }
@@ -710,14 +710,14 @@ namespace OpenLiveWriter.HtmlEditor
         {
             get
             {
-                //not suported
+                //not supported
                 return false;
             }
         }
 
         public void Redo()
         {
-            //not impelemented;
+            //not implemented;
         }
 
         public bool CanCut
